@@ -1,5 +1,5 @@
 namespace :webpacker do
-  desc "Verifies that webpack & webpack-dev-server are present."
+  desc "Verifies that webpack & webpack-serve are present."
   task :check_binstubs do
     unless File.exist?("bin/webpack")
       $stderr.puts "webpack binstubs not found.\n"\

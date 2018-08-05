@@ -54,7 +54,7 @@ say "Installing dev server for live reloading"
 run "yarn add --dev webpack-serve"
 
 if Rails::VERSION::MAJOR == 5 && Rails::VERSION::MINOR > 1
-  say "You need to allow webpack-dev-server host as allowed origin for connect-src.", :yellow
+  say "You need to allow webpack-serve host as allowed origin for connect-src.", :yellow
   say "This can be done in Rails 5.2+ for development environment in the CSP initializer", :yellow
   say "config/initializers/content_security_policy.rb with a snippet like this:", :yellow
   say "policy.connect_src :self, :https, \"http://localhost:3035\", \"ws://localhost:3035\" if Rails.env.development?", :yellow
