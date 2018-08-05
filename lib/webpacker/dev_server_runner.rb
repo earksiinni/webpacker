@@ -46,7 +46,7 @@ module Webpacker
       def execute_cmd
         env = { "NODE_PATH" => @node_modules_path.shellescape }
         cmd = [
-          "#{@node_modules_path}/.bin/webpack-dev-server",
+          "#{@node_modules_path}/.bin/webpack-serve",
           "--config", @webpack_config
         ]
         cmd += ["--progress", "--color"] if @pretty
