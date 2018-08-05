@@ -66,15 +66,15 @@ class Webpacker::Compiler
     def run_webpack
       logger.info "Compiling…"
 
-      stdout, sterr , status = Open3.capture3(webpack_env, "#{RbConfig.ruby} ./bin/webpack")
+      status = system(webpack_env, "#{RbConfig.ruby} ./bin/webpack")
 
-      if status.success?
+      if status
         logger.info "Compiled all packs in #{config.public_output_path}"
       else
-        logger.error "Compilation failed:\n#{sterr}\n#{stdout}"
+        logger.error "Compilation failed."
       end
 
-      status.success?
+      status
     end
 
     def default_watched_paths
